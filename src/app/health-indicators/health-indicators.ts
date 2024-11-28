@@ -2,12 +2,12 @@ import { html, css, LitElement } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
 import { IgcCategoryChartModule } from '@infragistics/igniteui-webcomponents-charts';
 import { ModuleManager } from '@infragistics/igniteui-webcomponents-core';
-import { GlucoseType } from '../models/PatientDashboard/glucose-type';
-import { CholesterolHDLLDLType } from '../models/PatientDashboard/cholesterol-hdlldltype';
 import { BPSystolicDiastolicType } from '../models/PatientDashboard/bpsystolic-diastolic-type';
 import { TotalCholesterolType } from '../models/PatientDashboard/total-cholesterol-type';
-import { WeightType } from '../models/PatientDashboard/weight-type';
+import { CholesterolHDLLDLType } from '../models/PatientDashboard/cholesterol-hdlldltype';
 import { HeartRateType } from '../models/PatientDashboard/heart-rate-type';
+import { WeightType } from '../models/PatientDashboard/weight-type';
+import { GlucoseType } from '../models/PatientDashboard/glucose-type';
 import { patientDashboardService } from '../services/PatientDashboard-service';
 
 ModuleManager.register(IgcCategoryChartModule);
