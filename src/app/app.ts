@@ -129,7 +129,7 @@ export default class App extends LitElement {
       <div class="row-layout main-navigation">
         <igc-navbar class="navbar">
           <div class="row-layout group">
-            <div @click="${() => Router.go(`/home`)}" class="row-layout group_1">
+            <div @click="${() => Router.go(`home`)}" class="row-layout group_1">
               <img src="/src/assets/logo2.svg" class="image" />
               <p class="typography__subtitle-2 text">
                 HEALTHCARE ASSISTANT
@@ -155,7 +155,7 @@ export default class App extends LitElement {
       <div class="row-layout bottom-container">
         <router-outlet class="view-container"></router-outlet>
         <igc-nav-drawer position="end" id="nav-drawer" class="nav-drawer">
-          <igc-nav-drawer-item @click="${() => Router.go(`/home`)}">
+          <igc-nav-drawer-item @click="${() => Router.go(`home`)}">
             <span slot="icon">
               <span class="material-icons icon_1">
                 home
@@ -173,7 +173,7 @@ export default class App extends LitElement {
             </span>
             <div slot="content">Medications</div>
           </igc-nav-drawer-item>
-          <igc-nav-drawer-item @click="${() => Router.go(`/health-indicators`)}">
+          <igc-nav-drawer-item @click="${() => Router.go(`health-indicators`)}">
             <span slot="icon">
               <span class="material-icons icon_1">
                 favorite
