@@ -33,6 +33,8 @@ jobs:
     - run: echo "//packages.infragistics.com/npm/js-licensed/:_auth=${{ secrets.NPM_AUTH_TOKEN }}" >> ~/.npmrc
     - run: echo "//packages.infragistics.com/npm/js-licensed/:always-auth=true" >> ~/.npmrc
     - run: npm i # replace with 'npm ci' after committing lock file from first install
+    - name: Update base href in index.html
+      run: sed -i 's|<base href="[^"]*"|<base href="/${{ github.event.repository.name }}/">|' ./index.html
     - run: npm run build
     # - name: Update base href in index.html
     #   run: sed -i 's|<base href="[^"]*"|<base href="/${{ github.event.repository.name }}/">|' ./dist/index.html
