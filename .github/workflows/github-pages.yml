@@ -33,6 +33,10 @@ jobs:
     - run: echo "//packages.infragistics.com/npm/js-licensed/:_auth=${{ secrets.NPM_AUTH_TOKEN }}" >> ~/.npmrc
     - run: echo "//packages.infragistics.com/npm/js-licensed/:always-auth=true" >> ~/.npmrc
     - run: npm i # replace with 'npm ci' after committing lock file from first install
+    - name: Update Router Navigation
+      run: |
+        sed -i "s|Router.go(\`/|Router.go(\`/${{ github.event.repository.name }}/|g" ./src/app/app.ts
+        sed -i "s|Router.go(\`/|Router.go(\`/${{ github.event.repository.name }}/|g" ./src/app/home/home.ts
     - run: npm run build
     - name: Update base href in index.html
       run: |
@@ -43,12 +47,6 @@ jobs:
       run: cp ./ig-theme.css ./dist/
     - name: Update href Paths for ig-theme.css
       run: find ./dist -type f -exec sed -i "s|href=\"../../ig-theme.css\"|href=\"../../${{ github.event.repository.name }}/ig-theme.css\"|g" {} +
-    - name: Update Router Navigation
-      run: |
-        sed -i "s|Router.go(\`/|Router.go(\`/${{ github.event.repository.name }}/|g" ./src/app/app.ts
-        sed -i "s|Router.go(\`/|Router.go(\`/${{ github.event.repository.name }}/|g" ./src/app/home/home.ts
-    - name: View app-root.ts after change
-      run: cat ./src/app/app.ts
     - name: SPA routing handling
       run: cp ./dist/index.html ./dist/404.html
     - name: Upload build artifact to GitHub Pages
