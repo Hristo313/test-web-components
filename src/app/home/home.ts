@@ -283,7 +283,7 @@ export default class Home extends LitElement {
       <link rel='stylesheet' href='../../ig-theme.css'>
       <div class="column-layout group">
         <div class="row-layout group_1">
-          <div @click="${() => Router.go(`/test-web-components/health-indicators`)}" class="column-layout group_2">
+          <div @click="${() => Router.go(`/health-indicators`)}" class="column-layout group_2">
             <img src="/src/assets/HRate-White.svg" class="image" />
             <p class="typography__subtitle-2 content">
               HEART RATE
@@ -302,7 +302,7 @@ export default class Home extends LitElement {
               </p>
             </div>
           </div>
-          <div @click="${() => Router.go(`/test-web-components/health-indicators`)}" class="column-layout group_5">
+          <div @click="${() => Router.go(`/health-indicators`)}" class="column-layout group_5">
             <img src="/src/assets/BPressure-White.svg" class="image_1" />
             <p class="typography__subtitle-2 content">
               BLOOD PRESSURE
@@ -327,7 +327,7 @@ export default class Home extends LitElement {
               </p>
             </div>
           </div>
-          <div @click="${() => Router.go(`/test-web-components/health-indicators`)}" class="column-layout group_6">
+          <div @click="${() => Router.go(`/health-indicators`)}" class="column-layout group_6">
             <img src="/src/assets/Cholesterol-White.svg" class="image_1" />
             <p class="typography__subtitle-2 content">
               CHOLESTEROL
@@ -346,7 +346,7 @@ export default class Home extends LitElement {
               </p>
             </div>
           </div>
-          <div @click="${() => Router.go(`/test-web-components/health-indicators`)}" class="column-layout group_7">
+          <div @click="${() => Router.go(`/health-indicators`)}" class="column-layout group_7">
             <img src="/src/assets/Scale-White.svg" class="image_2" />
             <p class="typography__subtitle-2 content">
               WEIGHT
