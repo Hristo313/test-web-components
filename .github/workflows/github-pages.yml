@@ -52,9 +52,15 @@ jobs:
       run: cat ./dist/index.html
     - name: SPA routing handling
       run: cp ./dist/index.html ./dist/404.html
+    - name: "5:"
+      run: cat ./dist/index.html
     - name: Upload build artifact to GitHub Pages
       uses: actions/upload-pages-artifact@v1
       with:
         path: ./dist
+    - name: "6:"
+      run: cat ./dist/index.html
     - name: Deploy to GitHub Pages
       uses: actions/deploy-pages@v1
+    - name: "7:"
+      run: cat ./dist/index.html
