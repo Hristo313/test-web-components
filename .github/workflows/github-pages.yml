@@ -34,10 +34,9 @@ jobs:
     - run: echo "//packages.infragistics.com/npm/js-licensed/:always-auth=true" >> ~/.npmrc
     - run: npm i # replace with 'npm ci' after committing lock file from first install
     - name: Update Router Navigation
-      run: find ./src -type f -name "*.ts" -exec sed -i "s|Router.go(\`/|Router.go(\`/${{ github.event.repository.name }}/|g" {} \;
-    - name: Update navigateFallback in Service Worker
       run: |
-        find ./src -type f -name "sw.js" -exec sed -i "s|navigateFallback: '/index.html'|navigateFallback: 'index.html'|g" {} \;
+        find ./src -type f -name "*.ts" -exec sed -i "s|Router.go(\`/|Router.go(\`/${{ github.event.repository.name }}/|g" {} \;
+        find ./ -type f -name "rollup.config.mjs" -exec sed -i "s|navigateFallback: '/index.html'|navigateFallback: 'index.html'|g" {} \;
     - run: npm run build
     - name: Update base href in index.html
       run: |
